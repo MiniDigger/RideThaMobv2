@@ -1,0 +1,4 @@
+name: RideThaMob
+version: ${version}
+main: me.MiniDigger.RideThaMobv2.RideThaMob
+author: MiniDigger
