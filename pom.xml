@@ -5,6 +5,15 @@
 	<artifactId>RideThaMob</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
 
+	<properties>
+		<maven.buildNumber.scmDirectory>${basedir}/.git</maven.buildNumber.scmDirectory>
+	</properties>
+
+	<scm>
+		<!-- Replace the connection below with your project connection -->
+		<connection>scm:git://git.minidigger.me:8080/minidigger/RideThaMobv2.git</connection>
+	</scm>
+
 	<build>
 		<resources>
 			<resource>
@@ -15,7 +24,7 @@
 				</includes>
 			</resource>
 		</resources>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -37,6 +46,23 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<shortRevisionLength>5</shortRevisionLength>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
