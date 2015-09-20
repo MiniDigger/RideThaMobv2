@@ -21,7 +21,8 @@ public class CustomEntitySkeleton extends EntitySkeleton {
 	@Override
 	//copyied form EntiyHorse
 	public void g(float sideMot, float forMot) {
-		if (this.passenger != null && this.passenger instanceof EntityLiving && this.cG()) {
+		if (this.passenger != null && this.passenger instanceof EntityLiving /*&& this.cG()*/) {
+			System.out.println("g");
 			// adjust pitch and yaw
 			final float yaw = this.passenger.yaw;
 			this.yaw = yaw;

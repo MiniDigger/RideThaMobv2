@@ -1,4 +1,7 @@
 name: RideThaMob
 version: ${version}-b${buildNumber}
-main: me.MiniDigger.RideThaMobv2.RideThaMob
+main: me.MiniDigger.RideThaMob.RideThaMob
 author: MiniDigger
+commands:
+    rtm:
+    rtmdev:
