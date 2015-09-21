@@ -14,11 +14,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 import me.MiniDigger.RideThaMob.RideThaMob;
+import me.MiniDigger.RideThaMob.lib.mkremins.fanciful.FancyMessage;
 
 public class LangHandler {
 	private static LangHandler INSTANCE;
+	private static final FancyMessage PREFIX = new FancyMessage("[").color(ChatColor.BLUE).then("RTM")
+			.tooltip("Made by MiniDigger", "admin@minidigger.me").color(ChatColor.GOLD).then("] ");
 
 	private Map<LangKey, String> loaded;
 
@@ -102,5 +106,9 @@ public class LangHandler {
 		} else {
 			return key.getDefaultValue();
 		}
+	}
+
+	public FancyMessage getPrefix() {
+		return PREFIX;
 	}
 }
