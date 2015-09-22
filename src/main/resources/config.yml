@@ -1,180 +1,180 @@
 BAT:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 BLAZE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 CAVE_SPIDER:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 CHICKEN:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 COW:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 CREEPER:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 ENDER_DRAGON:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 ENDERMAN:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 ENDERMITE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 GHAST:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 GIANT:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 GUARDIAN:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 HORSE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 IRON_GOLEM:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 MAGMA_CUBE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 MUSHROOM_COW:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 OCELOT:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 PIG:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 PIG_ZOMBIE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 RABBIT:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 SHEEP:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 SILVERFISH:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 SNOWBALL:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 SPIDER:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 SQUID:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 VILLAGER:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 WITCH:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 WITHER:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 WOLF:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
 ZOMBIE:
   rideSpeed: 0.2
-  jumptHeight: 0.6
+  jumpHeight: 0.6
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0

@@ -89,6 +89,8 @@ public class RideThaMob extends JavaPlugin {
 			float backMod = 0.25F;
 			float stepHeight = 1F;
 
+			//load from config
+			
 			rideSpeeds.put(e, rideSpeed);
 			jumpHeights.put(e, jumpHeight);
 			sideMods.put(e, sideMod);
