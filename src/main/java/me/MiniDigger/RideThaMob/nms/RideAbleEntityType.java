@@ -7,7 +7,7 @@ import net.minecraft.server.v1_8_R3.EntityInsentient;
 import net.minecraft.server.v1_8_R3.EntitySkeleton;
 
 public enum RideAbleEntityType {
-	SKELETON("Skeleton", 51, EntityType.SKELETON, EntitySkeleton.class, CustomEntitySkeleton.class);
+	SKELETON("Skeleton", 51, EntityType.SKELETON, EntitySkeleton.class, RideAbleZombie.class);
 
 	private String name;
 	private int id;

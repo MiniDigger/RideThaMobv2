@@ -24,11 +24,11 @@ public class RideThaMob extends JavaPlugin {
 	private Map<EntityType, Float> backMods = new HashMap<>();
 	private Map<EntityType, Float> stepHeights = new HashMap<>();
 
-	private EntityType[] rideAbleTypes = { EntityType.BAT, EntityType.BLAZE, EntityType.CAVE_SPIDER, EntityType.CHICKEN,
+	public EntityType[] rideAbleTypes = { EntityType.BAT, EntityType.BLAZE, EntityType.CAVE_SPIDER, EntityType.CHICKEN,
 			EntityType.COW, EntityType.CREEPER, EntityType.ENDER_DRAGON, EntityType.ENDERMAN, EntityType.ENDERMITE,
 			EntityType.GHAST, EntityType.GIANT, EntityType.GUARDIAN, EntityType.HORSE, EntityType.IRON_GOLEM,
 			EntityType.MAGMA_CUBE, EntityType.MUSHROOM_COW, EntityType.OCELOT, EntityType.PIG, EntityType.PIG_ZOMBIE,
-			EntityType.RABBIT, EntityType.SHEEP, EntityType.SILVERFISH, EntityType.SNOWBALL, EntityType.SPIDER,
+			EntityType.RABBIT, EntityType.SHEEP, EntityType.SILVERFISH, EntityType.SNOWMAN, EntityType.SPIDER,
 			EntityType.SQUID, EntityType.VILLAGER, EntityType.WITCH, EntityType.WITHER, EntityType.WOLF,
 			EntityType.ZOMBIE };
 
