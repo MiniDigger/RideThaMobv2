@@ -24,4 +24,6 @@ public class RideThaMobCommands {
 		System.out.println("yeah");
 		//TODO Update msg here
 	}
+	
+	//TODO add cmd to spawn and ride a mob
 }
