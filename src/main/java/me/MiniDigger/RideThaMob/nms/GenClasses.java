@@ -8,10 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import org.bukkit.entity.EntityType;
-
-import me.MiniDigger.RideThaMob.RideThaMob;
-
 public class GenClasses {
 	private static final File orig = new File(
 			"Z:/Dev/bukkit-ws/RideThaMob/src/main/java/me/MiniDigger/RideThaMob/nms/RideAbleEntity.java");
@@ -38,7 +34,10 @@ public class GenClasses {
 		PrintWriter w = new PrintWriter(file);
 
 		while (s.hasNextLine()) {
-			w.println(s.nextLine().replaceAll("RideAbleEntity", file.getName().replace(".java", ""))
+			w.println(s.nextLine()
+					.replaceAll("EntitySkeleton",
+							"Entity" + file.getName().replace(".java", "").replaceAll("RideAble", ""))
+					.replaceAll("RideAbleEntity", file.getName().replace(".java", ""))
 					.replaceAll("%date%", new SimpleDateFormat().format(new Date())));
 		}
 

@@ -28,9 +28,9 @@ public class RideThaMob extends JavaPlugin {
 			EntityType.COW, EntityType.CREEPER, EntityType.ENDER_DRAGON, EntityType.ENDERMAN, EntityType.ENDERMITE,
 			EntityType.GHAST, EntityType.GIANT, EntityType.GUARDIAN, EntityType.HORSE, EntityType.IRON_GOLEM,
 			EntityType.MAGMA_CUBE, EntityType.MUSHROOM_COW, EntityType.OCELOT, EntityType.PIG, EntityType.PIG_ZOMBIE,
-			EntityType.RABBIT, EntityType.SHEEP, EntityType.SILVERFISH, EntityType.SNOWMAN, EntityType.SPIDER,
-			EntityType.SQUID, EntityType.VILLAGER, EntityType.WITCH, EntityType.WITHER, EntityType.WOLF,
-			EntityType.ZOMBIE };
+			EntityType.RABBIT, EntityType.SHEEP, EntityType.SILVERFISH, EntityType.SKELETON, EntityType.SNOWMAN,
+			EntityType.SPIDER, EntityType.SQUID, EntityType.VILLAGER, EntityType.WITCH, EntityType.WITHER,
+			EntityType.WOLF, EntityType.ZOMBIE };
 
 	@Override
 	public void onLoad() {
@@ -89,8 +89,8 @@ public class RideThaMob extends JavaPlugin {
 			float backMod = 0.25F;
 			float stepHeight = 1F;
 
-			//load from config
-			
+			// load from config
+
 			rideSpeeds.put(e, rideSpeed);
 			jumpHeights.put(e, jumpHeight);
 			sideMods.put(e, sideMod);
