@@ -16,13 +16,15 @@ import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
 
 public class RideThaMob extends JavaPlugin {
 	private static RideThaMob INSTANCE;
-	CommandHandler c;
+	private CommandHandler c;
 
 	private Map<EntityType, Double> rideSpeeds = new HashMap<>();
 	private Map<EntityType, Double> jumpHeights = new HashMap<>();
 	private Map<EntityType, Float> sideMods = new HashMap<>();
 	private Map<EntityType, Float> backMods = new HashMap<>();
 	private Map<EntityType, Float> stepHeights = new HashMap<>();
+
+	private int updateVal = 1;
 
 	public EntityType[] rideAbleTypes = { EntityType.BAT, EntityType.BLAZE, EntityType.CAVE_SPIDER, EntityType.CHICKEN,
 			EntityType.COW, EntityType.CREEPER, EntityType.ENDER_DRAGON, EntityType.ENDERMAN, EntityType.ENDERMITE,
@@ -74,8 +76,15 @@ public class RideThaMob extends JavaPlugin {
 	}
 
 	public void loadConfig() {
-		saveDefaultConfig();
+		rideSpeeds = new HashMap<>();
+		jumpHeights = new HashMap<>();
+		sideMods = new HashMap<>();
+		backMods = new HashMap<>();
+		stepHeights = new HashMap<>();
+
 		// defaults
+		saveDefaultConfig();
+
 		rideSpeeds.put(EntityType.UNKNOWN, 0.2);
 		jumpHeights.put(EntityType.UNKNOWN, 0.6);
 		sideMods.put(EntityType.UNKNOWN, 0.5F);
@@ -89,13 +98,19 @@ public class RideThaMob extends JavaPlugin {
 			float backMod = 0.25F;
 			float stepHeight = 1F;
 
-			// load from config
+			rideSpeed = getConfig().getDouble(e.name() + ".rideSpeed");
+			jumpHeight = getConfig().getDouble(e.name() + ".jumpHeight");
+			sideMod = (float) getConfig().getDouble(e.name() + ".sideMod");
+			backMod = (float) getConfig().getDouble(e.name() + ".backMod");
+			stepHeight = (float) getConfig().getDouble(e.name() + ".stepHeight");
 
 			rideSpeeds.put(e, rideSpeed);
 			jumpHeights.put(e, jumpHeight);
 			sideMods.put(e, sideMod);
 			backMods.put(e, backMod);
 			stepHeights.put(e, stepHeight);
+
+			System.out.println("loaded " + e.name());
 		}
 	}
 
@@ -141,5 +156,13 @@ public class RideThaMob extends JavaPlugin {
 		} else {
 			return stepHeights.get(EntityType.UNKNOWN);
 		}
+	}
+
+	public void setShouldUpdate() {
+		updateVal++;
+	}
+
+	public int getUpdateVal() {
+		return updateVal;
 	}
 }

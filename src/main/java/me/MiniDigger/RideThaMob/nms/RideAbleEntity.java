@@ -22,16 +22,13 @@ public class RideAbleEntity extends EntitySkeleton {
 	private float sidewaysMod;
 	private float backwardsMod;
 	private float stepHeight;
+	private int updateVal = 0;
 
 	public RideAbleEntity(World world) {
 		super(world);
 
-		rideSpeed = RideThaMob.getInstance().getRideSpeed(getBukkitEntity().getType());
-		fly = RideThaMob.getInstance().getFly(getBukkitEntity().getType());
-		jumpHeight = RideThaMob.getInstance().getJumpHeight(getBukkitEntity().getType());
-		sidewaysMod = RideThaMob.getInstance().getSidewaysMod(getBukkitEntity().getType());
-		backwardsMod = RideThaMob.getInstance().getBackwardsMod(getBukkitEntity().getType());
-		stepHeight = RideThaMob.getInstance().getStepHeight(getBukkitEntity().getType());
+		updateStuff();
+		
 		if (jumpField == null) {
 			try {
 				jumpField = EntityLiving.class.getDeclaredField("aY");
@@ -42,8 +39,22 @@ public class RideAbleEntity extends EntitySkeleton {
 		}
 	}
 
+	private void updateStuff(){
+		rideSpeed = RideThaMob.getInstance().getRideSpeed(getBukkitEntity().getType());
+		fly = RideThaMob.getInstance().getFly(getBukkitEntity().getType());
+		jumpHeight = RideThaMob.getInstance().getJumpHeight(getBukkitEntity().getType());
+		sidewaysMod = RideThaMob.getInstance().getSidewaysMod(getBukkitEntity().getType());
+		backwardsMod = RideThaMob.getInstance().getBackwardsMod(getBukkitEntity().getType());
+		stepHeight = RideThaMob.getInstance().getStepHeight(getBukkitEntity().getType());
+	}
+	
 	public void g(float sideMot, float forwMot) {
 		if (passenger != null && passenger instanceof EntityHuman) {
+			if(RideThaMob.getInstance().getUpdateVal() > updateVal){
+				updateVal = RideThaMob.getInstance().getUpdateVal();
+				updateStuff();
+			}
+			
 			EntityHuman human = (EntityHuman) passenger;
 
 			S = stepHeight;

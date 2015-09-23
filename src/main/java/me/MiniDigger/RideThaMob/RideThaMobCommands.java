@@ -16,4 +16,12 @@ public class RideThaMobCommands {
 			}
 		}
 	}
+
+	@Command(name = "rtm.reload", permission = "rtm.reload", description = "Reloads the config")
+	public void reload(final CommandArgs args) {
+		RideThaMob.getInstance().reloadConfig();
+		RideThaMob.getInstance().setShouldUpdate();
+		System.out.println("yeah");
+		//TODO Update msg here
+	}
 }

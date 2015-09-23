@@ -130,6 +130,12 @@ SILVERFISH:
   sideMod: 0.5
   backMod: 0.25
   stepHeight: 1.0
+SKELETON:
+  rideSpeed: 0.2
+  jumptHeight: 0.6
+  sideMod: 0.5
+  backMod: 0.25
+  stepHeight: 1.0
 SNOWBALL:
   rideSpeed: 0.2
   jumpHeight: 0.6
