@@ -79,7 +79,7 @@
 	<repositories>
 		<repository>
 			<id>local-repo</id>
-			<url>file:Z:\Dev\core-ws\C_Core\repo</url>
+			<url>file:${basedir}\repo</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
