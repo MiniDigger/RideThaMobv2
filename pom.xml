@@ -21,6 +21,8 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>**/plugin.yml</include>
+					<include>**/config.yml</include>
+					<include>**/msgs.properties</include>
 				</includes>
 			</resource>
 		</resources>
@@ -71,7 +73,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot</artifactId>
-			<version>1.8.8-SNAPSHOT</version>
+			<version>1.9-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
