@@ -51,6 +51,11 @@ public class RideAbleEntity extends EntitySkeleton {
 			}
 		}
 		
+		if (RideThaMob.getInstance().getUpdateVal() > updateVal) {
+			updateVal = RideThaMob.getInstance().getUpdateVal();
+			updateStuff();
+		}
+		
 		final float yaw = entityliving.yaw;
 		this.yaw = yaw;
 		this.lastYaw = yaw;
