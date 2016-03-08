@@ -1,17 +1,18 @@
 package me.MiniDigger.RideThaMob;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-import org.bukkit.Bukkit;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.EntityType;
-import org.bukkit.plugin.java.JavaPlugin;
+import org.apache.commons.lang.ArrayUtils;
 
 import me.MiniDigger.RideThaMob.cmd.CoreCommandHandler;
 import me.MiniDigger.RideThaMob.cmd.api.CommandHandler;
 import me.MiniDigger.RideThaMob.lang.*;
 import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class RideThaMob extends JavaPlugin {
 	private static RideThaMob INSTANCE;
@@ -23,6 +24,7 @@ public class RideThaMob extends JavaPlugin {
 	private Map<EntityType, Float> backMods = new HashMap<>();
 	private Map<EntityType, Float> stepHeights = new HashMap<>();
 	
+	private int rtmRange = 10;
 	private int updateVal = 1;
 	
 	public EntityType[] rideAbleTypes = { EntityType.BAT, EntityType.BLAZE, EntityType.CAVE_SPIDER, EntityType.CHICKEN, EntityType.COW, EntityType.CREEPER,
@@ -90,6 +92,8 @@ public class RideThaMob extends JavaPlugin {
 		backMods.put(EntityType.UNKNOWN, 0.25F);
 		stepHeights.put(EntityType.UNKNOWN, 1F);
 		
+		rtmRange = getConfig().getInt("rtmRange");
+		
 		for (EntityType e : rideAbleTypes) {
 			double rideSpeed = 0.2;
 			double jumpHeight = 0.6;
@@ -108,9 +112,11 @@ public class RideThaMob extends JavaPlugin {
 			sideMods.put(e, sideMod);
 			backMods.put(e, backMod);
 			stepHeights.put(e, stepHeight);
-			
-			System.out.println("loaded " + e.name());
 		}
+	}
+	
+	public boolean isRideAble(EntityType e) {
+		return ArrayUtils.contains(rideAbleTypes, e);
 	}
 	
 	public double getRideSpeed(EntityType e) {
@@ -163,5 +169,9 @@ public class RideThaMob extends JavaPlugin {
 	
 	public int getUpdateVal() {
 		return updateVal;
+	}
+	
+	public int getRtmRange() {
+		return rtmRange;
 	}
 }

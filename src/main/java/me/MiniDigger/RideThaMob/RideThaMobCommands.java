@@ -1,28 +1,39 @@
 package me.MiniDigger.RideThaMob;
 
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
+import me.MiniDigger.RideThaMob.cmd.api.*;
+import me.MiniDigger.RideThaMob.lang.*;
 
-import me.MiniDigger.RideThaMob.cmd.api.Command;
-import me.MiniDigger.RideThaMob.cmd.api.CommandArgs;
+import org.bukkit.entity.*;
 
 public class RideThaMobCommands {
-	@Command(name = "rtm")
+	@Command(name = "rtm", consol = false)
 	public void rtm(final CommandArgs args) {
-		for (Entity e : args.getPlayer().getWorld().getNearbyEntities(args.getPlayer().getLocation(), 10, 10, 10)) {
-			if (e.getType() == EntityType.SKELETON || e.getType() == EntityType.PIG || e.getType() == EntityType.HORSE) {
-				e.setPassenger(args.getPlayer());
-				break;
+		for (int i = 0; i < RideThaMob.getInstance().getRtmRange(); i++) {
+			for (Entity e : args.getPlayer().getWorld().getNearbyEntities(args.getPlayer().getLocation(), i, i, i)) {
+				if (e.equals(args.getPlayer())) {
+					continue;
+				}
+				
+				if (e.getType() == EntityType.PLAYER) {
+					// skip for now till a proper permission system is added
+					continue;
+				}
+				
+				if (RideThaMob.getInstance().isRideAble(e.getType())) {
+					e.setPassenger(args.getPlayer());
+					Lang._(args.getSender(), LangKey.RIDE, e.getType().name());
+					return;
+				}
 			}
 		}
+		Lang._(args.getSender(), LangKey.NO_NEAR);
 	}
 	
 	@Command(name = "rtm.reload", permission = "rtm.reload", description = "Reloads the config")
 	public void reload(final CommandArgs args) {
 		RideThaMob.getInstance().reloadConfig();
 		RideThaMob.getInstance().setShouldUpdate();
-		System.out.println("yeah");
-		// TODO Update msg here
+		Lang._(args.getSender(), LangKey.CONFIG_RELOADED);
 	}
 	
 	// TODO add cmd to spawn and ride a mob

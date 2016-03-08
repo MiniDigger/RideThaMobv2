@@ -7,14 +7,17 @@ public enum LangKey {
 	LANG_LOADED_DEFAULTS("Successfully imported the default language (en_US)"),
 	LANG_NOT_LOADED("Could not load msgs.properties, trying to create new file"),
 	LANG_DEFAULTS_NOT_LOADED("Could not import default language file: %0%"),
-	LANG_DEFAULTS_NOT_CREATED("Could not create default language file: %0%");
-
+	LANG_DEFAULTS_NOT_CREATED("Could not create default language file: %0%"),
+	RIDE("You are now riding %0%"),
+	CONFIG_RELOADED("Config reloaded!"),
+	NO_NEAR("There are no mobs that you can ride near you");
+													
 	private final String defaultValue;
-
+	
 	private LangKey(String defaultValue) {
 		this.defaultValue = defaultValue;
 	}
-
+	
 	public String getDefaultValue() {
 		return defaultValue;
 	}
