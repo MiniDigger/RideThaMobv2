@@ -4,19 +4,16 @@ import java.util.*;
 
 import org.apache.commons.lang.ArrayUtils;
 
-import me.MiniDigger.RideThaMob.cmd.CoreCommandHandler;
-import me.MiniDigger.RideThaMob.cmd.api.CommandHandler;
+import me.MiniDigger.Foundation.handler.command.CommandHandler;
+import me.MiniDigger.Foundation.handler.module.Module;
 import me.MiniDigger.RideThaMob.lang.*;
 import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class RideThaMob extends JavaPlugin {
+public class RideThaMob extends Module {
 	private static RideThaMob INSTANCE;
-	private CommandHandler c;
 	
 	private Map<EntityType, Double> rideSpeeds = new HashMap<>();
 	private Map<EntityType, Double> jumpHeights = new HashMap<>();
@@ -34,15 +31,14 @@ public class RideThaMob extends JavaPlugin {
 			EntityType.WITCH, EntityType.WITHER, EntityType.WOLF, EntityType.ZOMBIE };
 			
 	@Override
-	public void onLoad() {
+	public boolean onLoad() {
 		INSTANCE = this;
+		return super.onLoad();
 	}
 	
 	@Override
-	public void onEnable() {
-		c = new CoreCommandHandler(null);
-		c.registerCommands(new RideThaMobCommands());
-		c.registerHelp();
+	public boolean onEnable() {
+		CommandHandler.getInstance().register(new RideThaMobCommands());
 		
 		RideAbleEntityType.registerEntities();
 		
@@ -54,20 +50,19 @@ public class RideThaMob extends JavaPlugin {
 		fixEntities();
 		
 		Lang._(Bukkit.getConsoleSender(), LangKey.START, getDescription().getVersion());
+		
+		return super.onLoad();
 	}
 	
 	@Override
-	public void onDisable() {
-		c.unregisterCommands(new RideThaMobCommands());
+	public boolean onDisable() {
+		CommandHandler.getInstance().unregister(new RideThaMobCommands());
+		
+		return super.onLoad();
 	}
 	
 	public static RideThaMob getInstance() {
 		return INSTANCE;
-	}
-	
-	@Override
-	public boolean onCommand(final CommandSender sender, final org.bukkit.command.Command command, final String label, final String[] args) {
-		return c.handleCommand(sender, label, command, args);
 	}
 	
 	public void fixEntities() {

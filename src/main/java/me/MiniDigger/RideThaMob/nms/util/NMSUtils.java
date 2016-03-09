@@ -46,7 +46,7 @@ public class NMSUtils {
 			method.setAccessible(true);
 			method.invoke(null, customClass, name, id);
 			
-			// below part is broken in 1.8...
+			// TODO below part is broken in 1.8...
 			/*
 			 * after doing the basic registering stuff , we have to register our
 			 * mob as to be the default for every biome. This can be done by

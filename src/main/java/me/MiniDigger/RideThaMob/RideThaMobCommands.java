@@ -1,8 +1,5 @@
 package me.MiniDigger.RideThaMob;
 
-import me.MiniDigger.RideThaMob.cmd.api.*;
-import me.MiniDigger.RideThaMob.lang.*;
-
 import org.bukkit.entity.*;
 
 public class RideThaMobCommands {

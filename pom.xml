@@ -10,7 +10,6 @@
 	</properties>
 
 	<scm>
-		<!-- Replace the connection below with your project connection -->
 		<connection>scm:git://git.minidigger.me:8080/minidigger/RideThaMobv2.git</connection>
 	</scm>
 
@@ -20,8 +19,6 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<includes>
-					<include>**/plugin.yml</include>
-					<include>**/config.yml</include>
 					<include>**/msgs.properties</include>
 				</includes>
 			</resource>
@@ -71,20 +68,10 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot</artifactId>
-			<version>1.9-SNAPSHOT</version>
+			<groupId>me.MiniDigger</groupId>
+			<artifactId>Foundation</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>local-repo</id>
-			<url>file:${basedir}/repo</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 </project>
