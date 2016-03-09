@@ -1,4 +1,0 @@
-test:
-  script:
-    - mvn clean install --batch-mode
-  tags:
