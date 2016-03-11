@@ -1,7 +1,6 @@
 package me.MiniDigger.RideThaMob;
 
 import me.MiniDigger.Foundation.api.FoundationAPI;
-import me.MiniDigger.Foundation.handler.lang.Lang;
 import me.MiniDigger.Foundation.handler.module.Module;
 import me.MiniDigger.RideThaMob.lang.RTMLangKey;
 import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
@@ -29,8 +28,6 @@ public class RideThaMob extends Module {
 		reloadConfig();
 
 		fixEntities();
-
-		Lang.console(RTMLangKey.START, getDescription().version());
 
 		return super.onLoad();
 	}
