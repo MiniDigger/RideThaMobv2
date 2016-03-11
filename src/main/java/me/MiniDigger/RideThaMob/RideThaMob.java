@@ -1,20 +1,10 @@
 package me.MiniDigger.RideThaMob;
 
-import java.io.File;
-import java.util.*;
-
-import org.apache.commons.lang.ArrayUtils;
-
 import me.MiniDigger.Foundation.api.FoundationAPI;
-import me.MiniDigger.Foundation.handler.command.CommandHandler;
-import me.MiniDigger.Foundation.handler.config.ConfigHandler;
 import me.MiniDigger.Foundation.handler.lang.Lang;
 import me.MiniDigger.Foundation.handler.module.Module;
-import me.MiniDigger.RideThaMob.lang.*;
+import me.MiniDigger.RideThaMob.lang.RTMLangKey;
 import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
-
-import org.bukkit.Bukkit;
-import org.bukkit.entity.EntityType;
 
 public class RideThaMob extends Module {
 	private static RideThaMob INSTANCE;
@@ -30,13 +20,11 @@ public class RideThaMob extends Module {
 
 	@Override
 	public boolean onEnable() {
-		CommandHandler.getInstance().register(new RideThaMobCommands());
-
 		RideAbleEntityType.registerEntities();
 
-		getServer().getPluginManager().registerEvents(new RideThaMobListener(), this);
-
-		FoundationAPI.registerLangKeys(new RTMLangKey());
+		FoundationAPI.registerCommands(new RideThaMobCommands(), this);
+		FoundationAPI.registerEvents(new RideThaMobListener(), this);
+		FoundationAPI.registerLangKeys(new RTMLangKey(), this);
 
 		reloadConfig();
 
@@ -49,8 +37,6 @@ public class RideThaMob extends Module {
 
 	@Override
 	public boolean onDisable() {
-		CommandHandler.getInstance().unregister(new RideThaMobCommands());
-
 		return super.onLoad();
 	}
 
