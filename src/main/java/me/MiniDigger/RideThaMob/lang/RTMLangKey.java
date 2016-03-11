@@ -7,7 +7,7 @@ import me.MiniDigger.Foundation.handler.lang.LangKey;
 import me.MiniDigger.Foundation.handler.lang.LangKeyProvider;
 
 public class RTMLangKey extends LangKeyProvider {
-	public static final String NAME = "foundation";
+	public static final String NAME = "ridethamob";
 
 	public static final LangKey RIDE = new LangKey(NAME, "ride", "You are now riding %0%");
 	public static final LangKey CONFIG_RELOADED = new LangKey(NAME, "config_reloaded", "Config reloaded!");
