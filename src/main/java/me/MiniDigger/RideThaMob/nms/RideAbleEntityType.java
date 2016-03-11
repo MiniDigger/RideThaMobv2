@@ -56,6 +56,7 @@ public enum RideAbleEntityType {
 	OCELOT("Ocelot", 98, EntityType.OCELOT, EntityOcelot.class, RideAbleOcelot.class),
 	PIG("Pig", 90, EntityType.PIG, EntityPig.class, RideAblePig.class),
 	PIGZOMBIE("PigZombie", 57, EntityType.PIG_ZOMBIE, EntityPigZombie.class, RideAblePigZombie.class),
+    //TODO Whats about players?!
 	RABBIT("Rabbit", 101, EntityType.RABBIT, EntityRabbit.class, RideAbleRabbit.class),
 	SHEEP("Sheep", 91, EntityType.SHEEP, EntitySheep.class, RideAbleSheep.class),
 	SILVERFISH("Silverfish", 60, EntityType.SILVERFISH, EntitySilverfish.class, RideAbleSilverfish.class),
@@ -110,5 +111,4 @@ public enum RideAbleEntityType {
 			NMSUtils.registerEntity(entity.getName(), entity.getID(), entity.getNMSClass(), entity.getCustomClass());
 		}
 	}
-
 }
