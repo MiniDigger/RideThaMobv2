@@ -12,11 +12,13 @@ import net.minecraft.server.v1_9_R1.World;
  */
 public class RideAbleEntity extends EntitySkeleton {
 	private double rideSpeed;
-	private boolean fly;
-	private double jumpHeight;
-	private float sidewaysMod;
-	private float backwardsMod;
-	private float stepHeight;
+	@SuppressWarnings("unused")
+	private boolean fly;// TODO Implement Flying
+	@SuppressWarnings("unused")
+	private double jumpHeight;// TODO Implement Jumping
+	private double sidewaysMod;
+	private double backwardsMod;
+	private double stepHeight;
 	private int updateVal = 0;
 
 	public RideAbleEntity(World world) {
@@ -67,7 +69,7 @@ public class RideAbleEntity extends EntitySkeleton {
 		this.aM = yaw2;
 		this.aO = yaw2;
 
-		f = entityliving.bd * sidewaysMod;
+		f = (float) (entityliving.bd * sidewaysMod);
 		f1 = entityliving.be;
 		if (f1 <= 0.0f) {
 			f1 *= backwardsMod;// backwards slower
@@ -77,6 +79,6 @@ public class RideAbleEntity extends EntitySkeleton {
 		this.l((float) rideSpeed);
 		super.g(f, f1);
 
-		this.P = stepHeight;
+		this.P = (float) stepHeight;
 	}
 }
