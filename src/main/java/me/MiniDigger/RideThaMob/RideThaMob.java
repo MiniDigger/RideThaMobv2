@@ -5,8 +5,10 @@ import java.util.*;
 
 import org.apache.commons.lang.ArrayUtils;
 
+import me.MiniDigger.Foundation.api.FoundationAPI;
 import me.MiniDigger.Foundation.handler.command.CommandHandler;
 import me.MiniDigger.Foundation.handler.config.ConfigHandler;
+import me.MiniDigger.Foundation.handler.lang.Lang;
 import me.MiniDigger.Foundation.handler.module.Module;
 import me.MiniDigger.RideThaMob.lang.*;
 import me.MiniDigger.RideThaMob.nms.RideAbleEntityType;
@@ -34,13 +36,13 @@ public class RideThaMob extends Module {
 
 		getServer().getPluginManager().registerEvents(new RideThaMobListener(), this);
 
-		LangHandler.getInstance().load();
+		FoundationAPI.registerLangKeys(new RTMLangKey());
 
 		reloadConfig();
 
 		fixEntities();
 
-		Lang._(Bukkit.getConsoleSender(), LangKey.START, getDescription().version());
+		Lang.console(RTMLangKey.START, getDescription().version());
 
 		return super.onLoad();
 	}
