@@ -21,9 +21,9 @@ public class RideThaMobConfig extends Config {
 
 	private Map<EntityType, Double> rideSpeeds = new HashMap<>();
 	private Map<EntityType, Double> jumpHeights = new HashMap<>();
-	private Map<EntityType, Float> sideMods = new HashMap<>();
-	private Map<EntityType, Float> backMods = new HashMap<>();
-	private Map<EntityType, Float> stepHeights = new HashMap<>();
+	private Map<EntityType, Double> sideMods = new HashMap<>();
+	private Map<EntityType, Double> backMods = new HashMap<>();
+	private Map<EntityType, Double> stepHeights = new HashMap<>();
 
 	private int rtmRange = 10;
 
@@ -55,7 +55,7 @@ public class RideThaMobConfig extends Config {
 		return false;
 	}
 
-	public float getSidewaysMod(EntityType e) {
+	public double getSidewaysMod(EntityType e) {
 		if (sideMods.containsKey(e)) {
 			return sideMods.get(e);
 		} else {
@@ -63,7 +63,7 @@ public class RideThaMobConfig extends Config {
 		}
 	}
 
-	public float getBackwardsMod(EntityType e) {
+	public double getBackwardsMod(EntityType e) {
 		if (backMods.containsKey(e)) {
 			return backMods.get(e);
 		} else {
@@ -71,7 +71,7 @@ public class RideThaMobConfig extends Config {
 		}
 	}
 
-	public float getStepHeight(EntityType e) {
+	public double getStepHeight(EntityType e) {
 		if (stepHeights.containsKey(e)) {
 			return stepHeights.get(e);
 		} else {
@@ -88,13 +88,45 @@ public class RideThaMobConfig extends Config {
 	}
 
 	public static RideThaMobConfig load() {
-		return (RideThaMobConfig) ConfigHandler.getInstance().loadConfig(RideThaMobConfig.class,
+		RideThaMobConfig c = (RideThaMobConfig) ConfigHandler.getInstance().loadConfig(RideThaMobConfig.class,
 				new File(RideThaMob.getInstance().getDataFolder(), "config.yml"));
+		c.loadStuff();
+		return c;
+	}
+
+	public void loadStuff() {
+		EntityType t = EntityType.UNKNOWN;
+		rideSpeeds.put(t, 0.2);
+		jumpHeights.put(t, 0.6);
+		sideMods.put(t, 0.5);
+		backMods.put(t, 0.25);
+		stepHeights.put(t, 1.0);
+
+		for (RideThaMobConfigObj obj : this.obj) {
+			EntityType type = EntityType.valueOf(obj.getEntityType());
+			rideSpeeds.put(type, obj.getRideSpeed());
+			jumpHeights.put(type, obj.getJumpHeight());
+			sideMods.put(type, obj.getSideMod());
+			backMods.put(type, obj.getBackMod());
+			stepHeights.put(type, obj.getStepHeight());
+		}
 	}
 
 	public void defaultValues() {
-		// TODO Auto-generated method stub
+		EntityType t = EntityType.UNKNOWN;
+		rideSpeeds.put(t, 0.2);
+		jumpHeights.put(t, 0.6);
+		sideMods.put(t, 0.5);
+		backMods.put(t, 0.25);
+		stepHeights.put(t, 1.0);
 
+		for (EntityType type : rideAbleTypes) {
+			rideSpeeds.put(type, 0.2);
+			jumpHeights.put(type, 0.6);
+			sideMods.put(type, 0.5);
+			backMods.put(type, 0.25);
+			stepHeights.put(type, 1.0);
+		}
 	}
 
 	public void save() {

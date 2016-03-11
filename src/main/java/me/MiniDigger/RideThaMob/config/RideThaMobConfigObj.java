@@ -1,11 +1,16 @@
 package me.MiniDigger.RideThaMob.config;
 
 public class RideThaMobConfigObj {
+	private String entityType = "UNKNOWN";
 	private double rideSpeed = 0.2;
 	private double jumpHeight = 0.6;
 	private double sideMod = 0.5;
 	private double backMod = 0.25;
 	private double stepHeight = 1.0;
+
+	public String getEntityType(){
+		return entityType;
+	}
 
 	public double getRideSpeed() {
 		return rideSpeed;
