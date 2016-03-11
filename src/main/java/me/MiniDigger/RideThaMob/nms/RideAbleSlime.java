@@ -1,6 +1,7 @@
 package me.MiniDigger.RideThaMob.nms;
 
 import me.MiniDigger.RideThaMob.RideThaMob;
+
 import net.minecraft.server.v1_9_R1.Entity;
 import net.minecraft.server.v1_9_R1.EntityHuman;
 import net.minecraft.server.v1_9_R1.EntityLiving;
@@ -21,7 +22,7 @@ public class RideAbleSlime extends EntitySlime {
 	private double stepHeight;
 	private int updateVal = 0;
 
-	public RideAbleSlime(World world) {
+	public RideAbleSlime(final World world) {
 		super(world);
 
 		updateStuff();
@@ -39,17 +40,17 @@ public class RideAbleSlime extends EntitySlime {
 	@Override
 	public void g(float f, float f1) {
 		// stearing passagner
-		EntityLiving entityliving = (EntityLiving) this.bt();
+		EntityLiving entityliving = (EntityLiving) bt();
 		if (entityliving == null) {
 			// search first human passanger
-			for (Entity e : passengers) {
+			for (final Entity e : passengers) {
 				if (e instanceof EntityHuman) {
 					entityliving = (EntityLiving) e;
 					break;
 				}
 			}
 			if (entityliving == null) {
-				this.P = 0.5f;
+				P = 0.5f;
 				super.g(f, f1);
 				return;
 			}
@@ -62,12 +63,12 @@ public class RideAbleSlime extends EntitySlime {
 
 		final float yaw = entityliving.yaw;
 		this.yaw = yaw;
-		this.lastYaw = yaw;
-		this.pitch = entityliving.pitch * 0.5f;
-		this.setYawPitch(this.yaw, this.pitch);
+		lastYaw = yaw;
+		pitch = entityliving.pitch * 0.5f;
+		setYawPitch(this.yaw, pitch);
 		final float yaw2 = this.yaw;
-		this.aM = yaw2;
-		this.aO = yaw2;
+		aM = yaw2;
+		aO = yaw2;
 
 		f = (float) (entityliving.bd * sidewaysMod);
 		f1 = entityliving.be;
@@ -79,6 +80,6 @@ public class RideAbleSlime extends EntitySlime {
 		this.l((float) rideSpeed);
 		super.g(f, f1);
 
-		this.P = (float) stepHeight;
+		P = (float) stepHeight;
 	}
 }

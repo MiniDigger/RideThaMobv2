@@ -2,7 +2,7 @@ package me.MiniDigger.RideThaMob.config;
 
 import me.MiniDigger.Foundation.handler.config.ConfigAdapter;
 
-public class RideThaMobConfigObjAdapter extends ConfigAdapter{
+public class RideThaMobConfigObjAdapter extends ConfigAdapter {
 
 	@Override
 	public Class<?> getClazz() {
@@ -10,13 +10,13 @@ public class RideThaMobConfigObjAdapter extends ConfigAdapter{
 	}
 
 	@Override
-	public Object fromString(String source) {
+	public Object fromString(final String source) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String toString(Object source) {
+	public String toString(final Object source) {
 		// TODO Auto-generated method stub
 		return null;
 	}

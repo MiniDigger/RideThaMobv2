@@ -1,14 +1,14 @@
 package me.MiniDigger.RideThaMob.config;
 
 public class RideThaMobConfigObj {
-	private String entityType = "UNKNOWN";
+	private final String entityType = "UNKNOWN";
 	private double rideSpeed = 0.2;
 	private double jumpHeight = 0.6;
 	private double sideMod = 0.5;
 	private double backMod = 0.25;
 	private double stepHeight = 1.0;
 
-	public String getEntityType(){
+	public String getEntityType() {
 		return entityType;
 	}
 
@@ -16,7 +16,7 @@ public class RideThaMobConfigObj {
 		return rideSpeed;
 	}
 
-	public void setRideSpeed(double rideSpeed) {
+	public void setRideSpeed(final double rideSpeed) {
 		this.rideSpeed = rideSpeed;
 	}
 
@@ -24,7 +24,7 @@ public class RideThaMobConfigObj {
 		return jumpHeight;
 	}
 
-	public void setJumpHeight(double jumpHeight) {
+	public void setJumpHeight(final double jumpHeight) {
 		this.jumpHeight = jumpHeight;
 	}
 
@@ -32,7 +32,7 @@ public class RideThaMobConfigObj {
 		return sideMod;
 	}
 
-	public void setSideMod(double sideMod) {
+	public void setSideMod(final double sideMod) {
 		this.sideMod = sideMod;
 	}
 
@@ -40,7 +40,7 @@ public class RideThaMobConfigObj {
 		return backMod;
 	}
 
-	public void setBackMod(double backMod) {
+	public void setBackMod(final double backMod) {
 		this.backMod = backMod;
 	}
 
@@ -48,7 +48,7 @@ public class RideThaMobConfigObj {
 		return stepHeight;
 	}
 
-	public void setStepHeight(double stepHeight) {
+	public void setStepHeight(final double stepHeight) {
 		this.stepHeight = stepHeight;
 	}
 

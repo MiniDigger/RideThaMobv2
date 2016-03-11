@@ -1,17 +1,19 @@
 package me.MiniDigger.RideThaMob;
 
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.*;
-
 import me.MiniDigger.Foundation.handler.command.CommandDescription;
 import me.MiniDigger.Foundation.handler.lang.Lang;
 import me.MiniDigger.RideThaMob.lang.RTMLangKey;
 
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+
 public class RideThaMobCommands {
 	@CommandDescription(name = "rtm", permission = "rtm", description = "Rides the nearest entity to your location", console = false)
-	public void rtm(Player sender) {
+	public void rtm(final Player sender) {
 		for (int i = 0; i < RideThaMob.getInstance().getConfig().getRtmRange(); i++) {
-			for (Entity e : sender.getWorld().getNearbyEntities(sender.getLocation(), i, i, i)) {
+			for (final Entity e : sender.getWorld().getNearbyEntities(sender.getLocation(), i, i, i)) {
 				if (e.equals(sender)) {
 					continue;
 				}
@@ -32,7 +34,7 @@ public class RideThaMobCommands {
 	}
 
 	@CommandDescription(name = "rtm.reload", permission = "rtm.reload", description = "Reloads the config")
-	public void reload(CommandSender sender) {
+	public void reload(final CommandSender sender) {
 		RideThaMob.getInstance().reloadConfig();
 		RideThaMob.getInstance().setShouldUpdate();
 		Lang.msg(sender, RTMLangKey.CONFIG_RELOADED);
